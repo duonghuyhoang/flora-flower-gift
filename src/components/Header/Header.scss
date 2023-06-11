@@ -114,13 +114,14 @@
   }
   .input-search {
     position: absolute;
-    // margin-top: 205px;
+  
     margin-left: -250px;
-    
+    color: #5a4e9f;
     width: 500px;
     height: 48px;
+    padding-top: 10px;
     border-radius: 26px;
-    padding-left: 20px;
+    padding-left: 30px;
     border: 1px solid #7f79a1;
     outline: none ;
     &:hover {
@@ -133,7 +134,7 @@
   .search-icon-input-results {
       position: absolute;
       margin-top: 15px;
-      margin-left: 215px;
+      margin-left: 180px;
       cursor: pointer;
       //  margin-top: 220px;
   }
@@ -144,7 +145,7 @@
      margin-top: 10px;
      font-weight: 100;
      color: #635b95;
-     margin-left: -40px;
+     margin-left: -60px;
      position: relative;
     background-color: inherit;
     outline: none !important;
@@ -324,6 +325,25 @@ padding: 10px 20px;
       border: 3.5px solid #5a4e9f;
     }
   }
+  .search-input-container {
+    position: relative;
+  } 
+  .search-input-container label {
+    position: absolute;
+    font-size: 1.2em;
+    margin-left: -240px;
+    margin-top: -20px;
+    left: 20px;
+    top: 13px;
+    transition: all 0.2s ease-in-out;
+    color: #5a4e9f;
+  }
+  .search-input-container input:focus + label, .search-input-container label.active
+{
+  top: 4px;
+
+  font-size: 11px;
+}
   .continue-shopping-notification {
     cursor: pointer;
     margin-top: -10px;

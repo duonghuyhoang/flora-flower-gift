@@ -28,6 +28,9 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const lastAddedItem = useSelector((state) => state.cart.lastAddedItem);
   const notificationClass = document.querySelector(".notification");
+  const [inputStates, setInputStates] = useState({
+    search: { isFocused: false, hasValue: false },
+  });
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;
@@ -56,7 +59,7 @@ function Header() {
     setPrevScrollPos(currentScrollPos);
   };
 
-  const handleSearchChange = (event) => {
+  const handleChange = (event, search) => {
     const value = event.target.value;
     setSearchTerm(value);
     if (value) {
@@ -67,6 +70,13 @@ function Header() {
     } else {
       setSearchResults([]);
     }
+    setInputStates((prevInputStates) => ({
+      ...prevInputStates,
+      [search]: {
+        ...prevInputStates[search],
+        hasValue: event.target.value !== "",
+      },
+    }));
   };
 
   useEffect(() => {
@@ -158,6 +168,19 @@ function Header() {
     setTimeout(() => setNotificationOpen(true), 200);
   }, [lastAddedItem]);
 
+  const handleFocus = (search) => {
+    setInputStates((prevInputStates) => ({
+      ...prevInputStates,
+      [search]: { ...prevInputStates[search], isFocused: true },
+    }));
+  };
+  const handleBlur = (search) => {
+    setInputStates((prevInputStates) => ({
+      ...prevInputStates,
+      [search]: { ...prevInputStates[search], isFocused: false },
+    }));
+  };
+
   return (
     <Header className='header'>
       {searching && <div className='overlay' />}
@@ -185,13 +208,27 @@ function Header() {
         )}
         {searching ? (
           <div className='wrapper-search'>
-            <input
-              type='text'
-              className='input-search'
-              placeholder='Search...'
-              value={searchTerm}
-              onChange={handleSearchChange}
-            />
+            <div className='search-input-container'>
+              <input
+                className='input-search'
+                id='search-input'
+                type='text'
+                value={searchTerm}
+                onFocus={() => handleFocus("search")}
+                onBlur={() => handleBlur("search")}
+                onChange={(event) => handleChange(event, "search")}
+              />
+              <label
+                htmlFor='search-input'
+                className={`${
+                  inputStates.search.isFocused || inputStates.search.hasValue
+                    ? "active"
+                    : ""
+                }`}
+              >
+                Search
+              </label>
+            </div>
             <div className='search-icon-result'>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
