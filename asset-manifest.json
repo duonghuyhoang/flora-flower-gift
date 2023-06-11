@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/flora-flower-gift/static/css/main.6abb108c.css",
-    "main.js": "/flora-flower-gift/static/js/main.d6bfeecf.js",
+    "main.css": "/flora-flower-gift/static/css/main.f1ada412.css",
+    "main.js": "/flora-flower-gift/static/js/main.aa85eb63.js",
     "static/js/787.06b61b28.chunk.js": "/flora-flower-gift/static/js/787.06b61b28.chunk.js",
     "static/media/image1.png": "/flora-flower-gift/static/media/image1.d04fd40155b3ec7b2ed6.png",
     "static/media/Migoda_8.png": "/flora-flower-gift/static/media/Migoda_8.b38f6ecccf080ab45235.png",
     "index.html": "/flora-flower-gift/index.html",
-    "main.6abb108c.css.map": "/flora-flower-gift/static/css/main.6abb108c.css.map",
-    "main.d6bfeecf.js.map": "/flora-flower-gift/static/js/main.d6bfeecf.js.map",
+    "main.f1ada412.css.map": "/flora-flower-gift/static/css/main.f1ada412.css.map",
+    "main.aa85eb63.js.map": "/flora-flower-gift/static/js/main.aa85eb63.js.map",
     "787.06b61b28.chunk.js.map": "/flora-flower-gift/static/js/787.06b61b28.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6abb108c.css",
-    "static/js/main.d6bfeecf.js"
+    "static/css/main.f1ada412.css",
+    "static/js/main.aa85eb63.js"
   ]
 }
