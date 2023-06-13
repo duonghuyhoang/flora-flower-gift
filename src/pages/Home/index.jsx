@@ -2,7 +2,7 @@ import DefaultLayout from "../../layouts/DefaultLayout";
 import "./Home.scss";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart/cartSlice";
-
+import Pickup from "../../components/Pickup";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Sale from "../../components/Sale";
@@ -41,7 +41,7 @@ function Home() {
         <div className='wrapper-home'>
           <div className='image-content'></div>
           <div className='wrapper-home-content'>
-            <div className=''>
+            <div className='wrapper-buy-home-page'>
               {products.slice(1, 2).map((product) => (
                 <div className='buy-home-page'>
                   <div className='wrapper-product-image-home'>
@@ -123,13 +123,20 @@ function Home() {
                         +
                       </button>
                     </div>
+                    <div className='pickup-home'>
+                      <Pickup />
+                    </div>
+
                     <div
                       className='add-to-cart-buy-home'
                       onClick={() => dispatch(addToCart({ product, quantity }))}
                     >
                       <AddToCart />
                     </div>
-                    <div style={{ position: "relative" }}>
+                    <div
+                      style={{ position: "relative" }}
+                      className='wrapper-search'
+                    >
                       <div className='share share-buy-home'>
                         <svg
                           xmlns='http://www.w3.org/2000/svg'
@@ -171,6 +178,7 @@ function Home() {
             </div>
             <div className='video-home'>
               <iframe
+                className='video-iframe'
                 width='1140'
                 height='750'
                 style={{ borderRadius: "20px" }}

@@ -175,3 +175,27 @@
       width: 480px;
     }
   }
+  @media screen and (max-width: 500px) {
+  
+    .name-input, .email-input, .phone-input, .comment-input {
+      width: 450px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+  
+    .name-input, .email-input, .phone-input, .comment-input {
+      width: 420px;
+    }
+  }
+  @media screen and (max-width: 440px) {
+  
+    .name-input, .email-input, .phone-input, .comment-input {
+      width: 370px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+  
+    .name-input, .email-input, .phone-input, .comment-input {
+      width: 350px;
+    }
+  }

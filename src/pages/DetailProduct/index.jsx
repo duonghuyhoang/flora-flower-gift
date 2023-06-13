@@ -1,7 +1,7 @@
 import "./DetailProduct.scss";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart/cartSlice";
-
+import Pickup from "../../components/Pickup";
 import React, { useState } from "react";
 import DefaultLayout from "../../layouts/DefaultLayout";
 import { useNavigate, useParams } from "react-router-dom";
@@ -162,6 +162,9 @@ function DetailProduct() {
                     />
                   </svg>
                   <span className='share-title'>Share</span>
+                </div>
+                <div className='pickup-datail-product'>
+                  <Pickup />
                 </div>
                 <div
                   className='add-to-cart-product-detail'

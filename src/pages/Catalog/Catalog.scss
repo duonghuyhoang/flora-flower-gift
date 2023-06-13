@@ -52,3 +52,34 @@
         margin-left: 250px;
     }
   }
+  @media screen and (max-width: 770px) {
+    .product-card-catalog {
+        width: 600px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .product-card-catalog {
+        width: 500px;
+    }
+    .wrapper-sort-catalog {
+      
+        margin-left: 200px;
+    }
+  }
+  @media screen and (max-width: 515px) {
+    .product-card-catalog {
+        width: 370px ;
+        padding: 50px 0;
+    }
+    .wrapper-sort-catalog {
+      
+        margin-left: 20px;
+    }
+    .sort-catalog {
+        
+        width: 230px;
+    }
+    .product-count {
+        width: 90px;
+    }
+  }

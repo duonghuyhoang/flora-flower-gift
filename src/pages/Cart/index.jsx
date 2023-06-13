@@ -1,18 +1,22 @@
 import { useSelector, useDispatch } from "react-redux";
 import DefaultLayout from "../../layouts/DefaultLayout";
+import Pickup from "../../components/Pickup";
 import {
   increaseQuantity,
   decreaseQuantity,
   removeFromCart,
 } from "../../features/cart/cartSlice";
+
 import "./Cart.scss";
 import { useNavigate } from "react-router-dom";
 import ProductCards from "../../components/ProductCards";
 import { products } from "../../products";
+
 function Cart() {
   const items = useSelector((state) => state.cart.items);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const totalValue = items.reduce(
     (total, item) =>
       total + item.quantity * parseFloat(item.product.priceSale.slice(1)),
@@ -58,7 +62,7 @@ function Cart() {
                 </thead>
                 <tbody>
                   {items.map((item) => (
-                    <tr key={item.product.id}>
+                    <tr className='tr-table' key={item.product.id}>
                       <td
                         className='detail-item-table'
                         style={{ padding: "20px 0" }}
@@ -83,7 +87,7 @@ function Cart() {
                           </div>
                         </div>
                       </td>
-                      <td style={{ padding: "20px 0" }}>
+                      <td style={{ padding: "20px 0" }} className='td-2'>
                         <div
                           style={{
                             display: "flex",
@@ -145,6 +149,7 @@ function Cart() {
                   ))}
                 </tbody>
               </table>
+
               <div className='wrapper-checkout'>
                 <div className='title-total-price'>
                   <span className='title-total'>Subtotal</span> $
@@ -153,6 +158,10 @@ function Cart() {
                 <div className='sub-title-total'>
                   Taxes and shipping calculated at checkout
                 </div>
+                <div className='pickup-cart'>
+                  <Pickup />
+                </div>
+
                 <button className='btn-go-to-check-out'>Check out</button>
               </div>
               <div className='featured-collection'>Featured collection</div>
